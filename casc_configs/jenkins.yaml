@@ -1,0 +1,36 @@
+jenkins:
+  systemMessage: "\n\nsetup for Jenkins Configuration as Code plugin......\n\n"
+
+  numExecutors: 1
+  mode: NORMAL
+  scmCheckoutRetryCount: 3
+  labelString: "master-label"  
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: admin
+         password: ${adminpw:-passw0rd}
+
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:anonymous"
+        - "Job/Read:anonymous"
+        - "View/Read:anonymous"
+        - "Overall/Administer:anonymous"
+
+  crumbIssuer: "standard"
+
+  remotingSecurity:
+    enabled: true    
+ 
+
+tool:
+  git:
+    installations:
+      - name: Default
+        home: "git"
+
+
