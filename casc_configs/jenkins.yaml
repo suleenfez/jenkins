@@ -5,13 +5,27 @@ jenkins:
   mode: NORMAL
   scmCheckoutRetryCount: 3
   labelString: "master-label"  
-
+  
   securityRealm:
     local:
       allowsSignup: false
+      enableCaptcha: false
       users:
-       - id: admin
-         password: ${adminpw:-passw0rd}
+        - id: admin
+          password: admin
+        - id: user
+          password: user
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: "username"
+              username: jenkins
+              password: 123
+              description: "Credentials for some-user"
 
   authorizationStrategy:
     globalMatrix:
