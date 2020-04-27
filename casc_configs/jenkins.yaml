@@ -11,10 +11,9 @@ jenkins:
     attributes: 'login-authorization'
   securityRealm:
     attributes: 'database-authentication'
-    disableSignup: 'false'
+    disableSignup: 'true'
     enableCaptcha: 'false'
-      allowsSignup: true
-      enableCaptcha: false
+  disableRememberMe: 'false'
       users:
         - id: admin
           password: admin
