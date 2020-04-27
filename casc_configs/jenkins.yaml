@@ -14,7 +14,7 @@ jenkins:
         - id: admin
           password: admin
         - id: user
-          password: user
+          password: ""
 
 credentials:
   system:
@@ -23,8 +23,8 @@ credentials:
           - usernamePassword:
               scope: GLOBAL
               id: "username"
-              username: jenkins
-              password: 123
+              username: "some-user"
+              password: "some-user"
               description: "Credentials for some-user"
 
   authorizationStrategy:
