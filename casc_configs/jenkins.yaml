@@ -8,7 +8,7 @@ jenkins:
   
   securityRealm:
     local:
-      allowsSignup: false
+      allowsSignup: true
       enableCaptcha: false
       users:
         - id: admin
