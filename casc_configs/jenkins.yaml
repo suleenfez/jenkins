@@ -6,8 +6,13 @@ jenkins:
   scmCheckoutRetryCount: 3
   labelString: "master-label"  
   
+  useSecurity: 'true'
+  authorizationStrategy:
+    attributes: 'login-authorization'
   securityRealm:
-    local:
+    attributes: 'database-authentication'
+    disableSignup: 'true'
+    enableCaptcha: 'false'
       allowsSignup: true
       enableCaptcha: false
       users:
